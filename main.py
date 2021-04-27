@@ -1,6 +1,5 @@
 import turtle
 import pandas
-
 from title_gen import Title
 
 screen = turtle.Screen()
@@ -22,46 +21,17 @@ while game_is_on:
 
     if answer_state.title() in all_states:
         num_states_guessed += 1
-        print('Do some turtle magic')
         state_data = data[data.state == answer_state.title()]
-
+        print(state_data.x)
+        print(int(state_data.y))
         title = Title()
         title.pin_title_to_map(int(state_data.x), int(state_data.y), answer_state.title())
-        # t = turtle.Turtle()
-        # t.hideturtle()
-        # t.penup()
-        # t.color("black")
-        # t.goto(state_data.x, state_data.y)
-        # t.write()
 
-
+    if num_states_guessed == 50:
+        game_is_on = False
 
 
 turtle.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # screen.exitonclick()

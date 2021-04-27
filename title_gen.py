@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-FONT = ('Courier', 12, 'normal')
+FONT = ('Courier', 10, 'normal')
 
 class Title(Turtle):
     def __init__(self):
