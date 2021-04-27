@@ -22,13 +22,13 @@ while game_is_on:
     if answer_state.title() in all_states:
         num_states_guessed += 1
         state_data = data[data.state == answer_state.title()]
-        print(state_data.x)
-        print(int(state_data.y))
         title = Title()
         title.pin_title_to_map(int(state_data.x), int(state_data.y), answer_state.title())
 
     if num_states_guessed == 50:
         game_is_on = False
+        show_win = Title()
+        show_win.annouce_win()
 
 
 turtle.mainloop()

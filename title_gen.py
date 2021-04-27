@@ -12,3 +12,7 @@ class Title(Turtle):
     def pin_title_to_map(self, x, y, state_name):
         self.goto(x, y)
         self.write(state_name, False, align="center", font=FONT)
+
+    def annouce_win(self):
+        self.goto(0, 0)
+        self.write("You Win!", False, align='center', font=('Courier', 30, 'bold'))
