@@ -17,13 +17,13 @@ all_states = data.state.to_list()
 
 while game_is_on:
 
-    answer_state = screen.textinput(title=f"Guess a State - {num_states_guessed}/50", prompt="What's another state name?")
+    answer_state = screen.textinput(title=f"Guess a State - {num_states_guessed}/50", prompt="What's another state name?").title()
 
-    if answer_state.title() in all_states:
+    if answer_state in all_states:
         num_states_guessed += 1
-        state_data = data[data.state == answer_state.title()]
+        state_data = data[data.state == answer_state]
         title = Title()
-        title.pin_title_to_map(int(state_data.x), int(state_data.y), answer_state.title())
+        title.pin_title_to_map(int(state_data.x), int(state_data.y), answer_state)
 
     if num_states_guessed == 50:
         game_is_on = False
